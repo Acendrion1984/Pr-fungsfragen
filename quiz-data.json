@@ -1,0 +1,930 @@
+
+{
+  "ET3_Wissenstest_1": {
+    "title": "Wirbelstromprüfung - Wissenstest 1",
+    "questions": [
+      {
+        "id": "ET3.1.1",
+        "question": "Ist der Wechselstromwiderstand einer Spule eine konstante Größe?",
+        "options": {
+          "a": "Nein, er verringert sich mit Erhöhung der Frequenz der angelegten Wechselspannung",
+          "b": "Nein, er vergrößert sich mit Erhöhung der Frequenz der angelegten Wechselspannung",
+          "c": "Nein, er ist unabhängig von der Frequenz, aber abhängig von der Amplitude der angelegten Wechselspannung",
+          "d": "Ja"
+        },
+        "correct_answer": "b"
+      },
+      {
+        "id": "ET3.1.2",
+        "question": "Wovon hängt in einem elektrischen Gleichstromkreis die Größe des Stromes ab?",
+        "options": {
+          "a": "Von der Permeabilität des Leiterwerkstoffes",
+          "b": "Von der Leitfähigkeit des Leiterwerkstoffes",
+          "c": "Von der angelegten Spannung",
+          "d": "die Antworten b) und c) sind richtig"
+        },
+        "correct_answer": "d"
+      },
+      {
+        "id": "ET3.1.3",
+        "question": "Wodurch wird die in eine Spule induzierte Spannung beeinflusst?",
+        "options": {
+          "a": "Durch die zeitliche Flussänderung des sie durchdringenden Feldes",
+          "b": "Durch Amplitude des Wechselfeldes",
+          "c": "Durch die Windungszahl der Spule",
+          "d": "Alles Obige ist richtig"
+        },
+        "correct_answer": "d"
+      },
+      {
+        "id": "ET3.1.5",
+        "question": "Wann ist die Wirbelstromdichte am größten?",
+        "options": {
+          "a": "bei geringer Permeabilität des Bauteils",
+          "b": "bei geringer elektrischer Leitfähigkeit des Bauteils",
+          "c": "bei geringer Prüffrequenz",
+          "d": "bei geringern elektrischen Widerstand des Bauteils"
+        },
+        "correct_answer": "d"
+      },
+      {
+        "id": "ET3.1.6",
+        "question": "In welcher Größenordnung liegt die Geschwindigkeit freier Elektronen unter Einwirkung eines elektrischen Feldes?",
+        "options": {
+          "a": "ca. Lichtgeschwindigkeit",
+          "b": "ca. 100 m/s",
+          "c": "ca. 100 mm/s",
+          "d": "unter 1 mm/s"
+        },
+        "correct_answer": "d"
+      },
+      {
+        "id": "ET3.1.7",
+        "question": "Was lässt sich am Zeigerdiagramm einer Spule ablesen?",
+        "options": {
+          "a": "Das Frequenzspektrum der verwendeten Schwingungen",
+          "b": "Der Phasenwinkel zwischen Strom und angelegter Spannung",
+          "c": "Die Momentanwerte der Spannungen im Nullpunkt des Koordinatensystems",
+          "d": "Die Frequenz der angelegten Spannung"
+        },
+        "correct_answer": "b"
+      },
+      {
+        "id": "ET3.1.8",
+        "question": "Wie groß ist der Phasenverschiebungswinkel zwischen Strom und Spannung bei einer idealen Spule?",
+        "options": {
+          "a": "2π entsprechend 360°",
+          "b": "π entsprechend 180°",
+          "c": "π/2 entsprechend 90°",
+          "d": "π/4 entsprechend 45°"
+        },
+        "correct_answer": "c"
+      },
+      {
+        "id": "ET3.1.9",
+        "question": "Wird durch Hinzufügen von Oberwellen die Form einer sinusförmigen Spannung verändert?",
+        "options": {
+          "a": "Ja, da auch die Frequenz der Grundwelle verändert wird",
+          "b": "Ja",
+          "c": "Nein, Sinusschwingung bleibt Sinusschwingung",
+          "d": "Nein, denn die Sinusform lässt sich nicht verändern"
+        },
+        "correct_answer": "b"
+      },
+      {
+        "id": "ET3.1.10",
+        "question": "Was kann man an einem Frequenzspektrum ablesen?",
+        "options": {
+          "a": "Die an einer Schwingung beteiligten Frequenzen und deren Maximalwerte",
+          "b": "Die zu den Einzelschwingungen gehörenden Phasenwinkel",
+          "c": "Das Rauschen der Verstärker",
+          "d": "Die Antworten a) und b) sind richtig"
+        },
+        "correct_answer": "a"
+      },
+      {
+        "id": "ET3.1.11",
+        "question": "Welche Einflüsse verändern unter anderem auch das resultierende Feld bei der Wirbelstromprüfung?",
+        "options": {
+          "a": "Der Strom in der Erregerspule",
+          "b": "Die Frequenz des Erregerstromes",
+          "c": "Die Phasenverschiebung Δφ von Erregerstrom und Erregerspannung",
+          "d": "Alle Antworten sind richtig"
+        },
+        "correct_answer": "d"
+      },
+      {
+        "id": "ET3.1.12",
+        "question": "Was verursachen Wirkwiderstände in einem elektrischen Stromkreis?",
+        "options": {
+          "a": "Sie bewirken eine Phasenverschiebung von Strom und Spannung",
+          "b": "In ihnen wird elektrische Leistung in Wärme umgesetzt",
+          "c": "Sie behindern den Stromfluss, ohne elektrische Leistung zu verbrauchen",
+          "d": "Sie unterdrücken eventuell vorhandene Blindströme"
+        },
+        "correct_answer": "b"
+      },
+      {
+        "id": "ET3.1.13",
+        "question": "Die Lenz´sche Regel besagt",
+        "options": {
+          "a": "Strom und Spannung liegen in einer Phase",
+          "b": "Die Permeabilität ist abhängig von der Feldstärke",
+          "c": "Der Induktionsstrom ist stets so gerichtet, dass er seiner Entstehungsursache entgegenwirkt",
+          "d": "Strom und Feld stehen 90° zueinander"
+        },
+        "correct_answer": "c"
+      },
+      {
+        "id": "ET3.1.14",
+        "question": "Ein Zweck der Sekundärwindung in einer Wirbelstromspule ist es",
+        "options": {
+          "a": "Wirbelströme in das Werkstück zu induzieren",
+          "b": "Änderungen im Fluss der Wirbelströme zu detektieren",
+          "c": "Wirbelströme in das Werkstück induzieren und Änderungen im Fluss der Wirbelströme zu detektieren",
+          "d": "liefern des Wechselstroms"
+        },
+        "correct_answer": "b"
+      },
+      {
+        "id": "ET3.1.15",
+        "question": "Die Impedanz einer Wirbelstromprüfspule steigt wenn die (der)",
+        "options": {
+          "a": "Prüffrequenz steigt",
+          "b": "Induktive Rückwirkung der Spule sinkt",
+          "c": "Induktivität der Spule fällt",
+          "d": "Widerstand der Spule fällt"
+        },
+        "correct_answer": "a"
+      },
+      {
+        "id": "ET3.1.16",
+        "question": "Bei welchem Material ist bei einer Wirbelstromprüfung mit einer Frequenz von f = 10 kHz die Standard-Eindringtiefe der Wirbelströme größer?",
+        "options": {
+          "a": "Bei Kupfer größer als bei Messing",
+          "b": "Bei Messing größer als bei Kupfer",
+          "c": "In beiden Fällen gleich",
+          "d": "Die Eindringtiefe ist nur von der Frequenz abhängig"
+        },
+        "correct_answer": "b"
+      },
+      {
+        "id": "ET3.1.17",
+        "question": "Welche Aussage bezüglich der Arbeitskonstante kₐ ist richtig?",
+        "options": {
+          "a": "Sie hängt nur von der Leitfähigkeit des Prüfgegenstandes ab",
+          "b": "Die Wirbelstromverteilung in Proben aus unterschiedlichem Material ist die gleiche, wenn mit der gleichen Arbeitskonstanten gearbeitet wird",
+          "c": "Die Arbeitskonstante ist abhängig von der Frequenz, der Leitfähigkeit, der Permeabilität und der Geometrie des Prüfgegenstandes",
+          "d": "Die Antworten b) und c) sind richtig"
+        },
+        "correct_answer": "d"
+      },
+      {
+        "id": "ET3.1.18",
+        "question": "Von welchen Größen hängt der ohmsche Widerstand einer Spule ab?",
+        "options": {
+          "a": "Vom Leiterwerkstoff",
+          "b": "Von der Länge des Leiters",
+          "c": "Von der Querschnittsfläche des Leiters",
+          "d": "Die Antworten a), b) und c) sind richtig"
+        },
+        "correct_answer": "d"
+      },
+      {
+        "id": "ET3.1.19",
+        "question": "Ist die elektrische Leitfähigkeit eine veränderliche Größe?",
+        "options": {
+          "a": "Ja, sie sinkt mit steigender Temperatur",
+          "b": "Ja, sie erhöht sich mit steigender Temperatur",
+          "c": "Nein, sie ist eine Werkstoffkonstante",
+          "d": "Nein, sie ist jedenfalls für alle Metalle ungefähr gleich groß"
+        },
+        "correct_answer": "a"
+      },
+      {
+        "id": "ET3.1.20",
+        "question": "Was besagt das Induktionsgesetz hinsichtlich der in einen Leiter induzierten Spannung?",
+        "options": {
+          "a": "Sie ist umso größer je größer die zeitliche Flussänderung ist",
+          "b": "Sie ist umso größer je größer die Standard-Eindringtiefe ist",
+          "c": "Sie ist umso größer je länger die Zeit ist, in der die Flussänderung erfolgt",
+          "d": "Alle Antworten sind richtig"
+        },
+        "correct_answer": "a"
+      },
+      {
+        "id": "ET3.1.21",
+        "question": "Wodurch erhöht sich der Widerstand eines Leiters mit zunehmender Frequenz des durchfließenden Stromes?",
+        "options": {
+          "a": "Durch stärkere Erwärmung infolge geringeren Stromflusses",
+          "b": "Durch die Erhöhung des induktiven Widerstandes",
+          "c": "Durch die abnehmende Permeabilität des Leiters",
+          "d": "Durch steigende Wechselspannung gemäß der Gleichung U = R · I"
+        },
+        "correct_answer": "b"
+      }
+    ]
+  },
+  "ET3_Wissenstest_2": {
+    "title": "Wirbelstromprüfung - Wissenstest 2",
+    "questions": [
+      {
+        "id": "ET3.2.1",
+        "question": "Wodurch wird u. a. die relative Permeabilität μᵣ einer ferromagnetischen Legierung verändert?",
+        "options": {
+          "a": "Durch den Vergütungszustand",
+          "b": "Durch die örtliche Verformung",
+          "c": "Durch Legierungsbestandteile",
+          "d": "Alle Antworten sind richtig"
+        },
+        "correct_answer": "d"
+      },
+      {
+        "id": "ET3.2.2",
+        "question": "Wo wird die 1. Kompensation eines Wirbelstromgerätes bei aufgesetztem Sensor vorgenommen?",
+        "options": {
+          "a": "Auf dem Kalibrierkörper - dabei darf die Aufsetzstelle fehlerbehaftet sein",
+          "b": "Auf dem Prüfgegenstand - dabei muss die Aufsetzstelle fehlerhaft sein",
+          "c": "Die Kompensation wird immer bei abgehobener Spule vorgenommen",
+          "d": "Auf dem Kalibrierkörper - dabei muss die Aufsetzstelle fehlerfrei sein"
+        },
+        "correct_answer": "d"
+      },
+      {
+        "id": "ET3.2.3",
+        "question": "Welche Filterart wird üblicherweise bei der Handprüfung mit Tastsensoren verwendet?",
+        "options": {
+          "a": "Hochpassfilter",
+          "b": "Tiefpassfilter",
+          "c": "Bandpassfilter",
+          "d": "eine Kombination von Hochpass- und Bandpassfilter"
+        },
+        "correct_answer": "b"
+      },
+      {
+        "id": "ET3.2.4",
+        "question": "Wie lässt sich das Nutz-Störsignal-Verhältnis verbessern?",
+        "options": {
+          "a": "Mit Hilfe der Gleichfeldvormagnetisierung ferromagnetischer Werkstoffe",
+          "b": "Durch Optimierung von Sensorgeometrie und Prüffrequenz",
+          "c": "Durch Filterung der Wirbelstromsignale",
+          "d": "Alle Antworten können das Nutz-Störsignal-Verhältnis verbessern"
+        },
+        "correct_answer": "d"
+      },
+      {
+        "id": "ET3.2.5",
+        "question": "Wozu werden Spulensysteme in Differenzschaltung vor allem verwendet?",
+        "options": {
+          "a": "Zur Messung der Leitfähigkeit",
+          "b": "Zur Messung des Ferritgehaltes",
+          "c": "Bei der Fehlerprüfung, wenn kleine Fehler gesucht werden",
+          "d": "Zur Messung der Permeabilität"
+        },
+        "correct_answer": "c"
+      },
+      {
+        "id": "ET3.2.6",
+        "question": "Für welchen Sensortyp kann ein Absolutsystem verwendet werden?",
+        "options": {
+          "a": "Nur für Innendurchlaufsensoren",
+          "b": "Nur für Tastsensoren",
+          "c": "Nur für die Fehlerprüfung",
+          "d": "Für alle geometrische Anordnungen zum Prüfgegenstand"
+        },
+        "correct_answer": "d"
+      },
+      {
+        "id": "ET3.2.7",
+        "question": "Ein Tastsensor wird zur Prüfung von kurzen Oberflächenrissen angewendet. Was muss für eine hohe Nachweisempfindlichkeit verwendet werden?",
+        "options": {
+          "a": "Eine Spule mit großen Durchmesser und hoher Frequenz",
+          "b": "Eine Spule mit großen Durchmesser und niedriger Frequenz",
+          "c": "Eine Spule mit kleinen Durchmesser und hoher Frequenz",
+          "d": "Eine Spule mit kleinen Durchmesser und niedriger Frequenz"
+        },
+        "correct_answer": "c"
+      },
+      {
+        "id": "ET3.2.8",
+        "question": "Welches Spulensystem ist geeignet, um bei der Prüfung in Rissrichtung sehr flach einlaufende Risse (kein abrupter Übergang) nachzuweisen?",
+        "options": {
+          "a": "Differenzsystem",
+          "b": "Absolutsystem",
+          "c": "nur ein Multidifferenzsystem",
+          "d": "nur ein Multidifferenzsystem kombiniert mit Impulswirbelstromtechnik"
+        },
+        "correct_answer": "b"
+      },
+      {
+        "id": "ET3.2.9",
+        "question": "Welches Spulensystem benötigt die geringste Anzahl von Spulen?",
+        "options": {
+          "a": "Absolutsystem",
+          "b": "Differenzsystem",
+          "c": "Segmentsensor",
+          "d": "die Antworten a) und c) sind richtig"
+        },
+        "correct_answer": "a"
+      },
+      {
+        "id": "ET3.2.10",
+        "question": "In welche Richtung wird bei der Fehlerprüfung die Anzeige des Abhebeeffektes gelegt?",
+        "options": {
+          "a": "Parallel zum Fehlersignal",
+          "b": "Entgegengesetzt zum Fehlersignal",
+          "c": "In die Horizontale",
+          "d": "Senkrecht zum Fehlersignal"
+        },
+        "correct_answer": "d"
+      },
+      {
+        "id": "ET3.2.11",
+        "question": "Was gilt hinsichtlich der Fehlerauffindbarkeit in Bezug auf die Oberflächenbeschaffenheit?",
+        "options": {
+          "a": "Die Risstiefe muss deutlich größer sein als die Oberflächenrauheit",
+          "b": "Bei rauher Oberfläche lassen sich nur oberflächenoffene Fehler finden",
+          "c": "Die Oberflächenrauheit hat nur einen geringen Einfluss auf die Fehlerauffindbarkeit",
+          "d": "Die Rauheit lässt sich durch geschickten Einsatz von Filtern ausblenden und spielt somit keine Rolle"
+        },
+        "correct_answer": "a"
+      },
+      {
+        "id": "ET3.2.12",
+        "question": "Will man elektrisch nicht leitende Schichten auf elektrisch leitenden aber nicht ferromagnetischen Werkstoffen messen, nutzt man welchen Effekt aus?",
+        "options": {
+          "a": "die Veränderung auf der Ortskurve für die Leitfähigkeiten",
+          "b": "die Veränderung auf der Ortskurve für die Wanddicke",
+          "c": "die Veränderung auf der Ortskurve für den Abstand (Lift-Off)",
+          "d": "Die Kombination der Antworten b) und c) sind richtig"
+        },
+        "correct_answer": "c"
+      },
+      {
+        "id": "ET3.2.14",
+        "question": "Welche Aussage bezüglich der Fehlerprüfung mit einem Differenzsensor im Selbstvergleich ist richtig?",
+        "options": {
+          "a": "Es werden zwei unterschiedliche Prüfgegenstände miteinander verglichen",
+          "b": "Es wird ein permanenter Vergleich zwischen Prüfgegenstand und Justierkörper vorgenommen",
+          "c": "Es werden zwei dicht benachbarte Bereiche eines Prüfgegenstandes direkt miteinander verglichen",
+          "d": "Es findet grundsätzlich eine Korrelationsauswertung statt"
+        },
+        "correct_answer": "c"
+      },
+      {
+        "id": "ET3.2.15",
+        "question": "Was muss beim Übergang auf eine deutlich höhere Prüfgeschwindigkeit bei der dynamischen Prüfung für die Geräteeinstellung beachtet, bzw. geändert werden?",
+        "options": {
+          "a": "Die Filtereinstellung",
+          "b": "Die Lage der Schwellen",
+          "c": "Der Wicklungsfüllungsgrad",
+          "d": "Die Vormagnetisierungssstromstärke"
+        },
+        "correct_answer": "a"
+      },
+      {
+        "id": "ET3.2.21",
+        "question": "Welche Bereiche müssen bei der Schweißnahtprüfung abgetastet werden?",
+        "options": {
+          "a": "Schweißnaht und Wärmeeinflusszone",
+          "b": "Schweißnahtwurzel- und Decklage",
+          "c": "Schweißnaht, Wärmeeinflusszone, Grundwerkstoff",
+          "d": "Grenzschicht Schmelzgut/Grundmaterial"
+        },
+        "correct_answer": "c"
+      },
+      {
+        "id": "ET3.2.22",
+        "question": "Welche Norm wird nach DIN EN ISO 17635 (Wirbelstromprüfung) für die Prüftechnik empfohlen (Prüfklasse nicht festgelegt)?",
+        "options": {
+          "a": "DIN EN ISO 17643",
+          "b": "DIN EN ISO 9712",
+          "c": "DIN EN ISO 5817",
+          "d": "DIN EN ISO 15549"
+        },
+        "correct_answer": "a"
+      }
+    ]
+  },
+  "ET3_Wissenstest_3": {
+    "title": "Wirbelstromprüfung - Wissenstest 3",
+    "questions": [
+      {
+        "id": "ET3.3.1",
+        "question": "Was ist der ohmsche Widerstand?",
+        "options": {
+          "a": "Der magnetische Widerstand im Luftspalt zwischen Sensor und Bauteil",
+          "b": "Die Feldstärke zwischen Plus- und Minuspol",
+          "c": "Die Ursache für das Fließen des elektrischen Stromes im Leiter",
+          "d": "Die Umwandlung elektrischer Energie in Wärmecenergie"
+        },
+        "correct_answer": "d"
+      },
+      {
+        "id": "ET3.3.2",
+        "question": "Welche Eigenschaft hat ein im Messingleiter fließender Gleichstrom?",
+        "options": {
+          "a": "Die Elektronen fließen immer in die gleiche Richtung",
+          "b": "Der Gleichstrom hat im Messingleiter die Frequenz 1 Hz",
+          "c": "Die Elektronen fließen mit Lichtgeschwindigkeit durch den Messingleiter",
+          "d": "Der Gleichstrom hält die Spannung auf einen konstanten Wert"
+        },
+        "correct_answer": "a"
+      },
+      {
+        "id": "ET3.3.4",
+        "question": "Ist der ohmsche Widerstand in metallischen Leitern temperaturabhängig?",
+        "options": {
+          "a": "Der Widerstand ist gemäß dem ohmschen Gesetz (R=U/I) temperatur-unabhängig",
+          "b": "Der Widerstand sinkt bei Erwärmung und ist über der Curietemperatur null",
+          "c": "Der Widerstand steigt bei Erwärmung des Leiters",
+          "d": "Der Widerstand ist eine materialabhängige konstante Größe"
+        },
+        "correct_answer": "c"
+      },
+      {
+        "id": "ET3.3.5",
+        "question": "Bei welcher Temperatur hat ferromagnetischer Stahl μr = 1?",
+        "options": {
+          "a": "T > 770°C",
+          "b": "T ≤ 369°C",
+          "c": "niemals",
+          "d": "unterhalb der Curietemperatur"
+        },
+        "correct_answer": "a"
+      },
+      {
+        "id": "ET3.3.6",
+        "question": "Welcher in der Hysteresekurve ablesbarer Zustand muss vermieden werden, wenn die Permeabilität die Messgröße ist?",
+        "options": {
+          "a": "Neukurve",
+          "b": "Induktion",
+          "c": "Remanenz",
+          "d": "Sättigung"
+        },
+        "correct_answer": "d"
+      },
+      {
+        "id": "ET3.3.7",
+        "question": "Wann tritt keine Phasenverschiebung zwischen Strom und Spannung auf?",
+        "options": {
+          "a": "wenn Strom durch rein ohnische Widerstände fließt",
+          "b": "wenn an Widerständen eine Wechselspannung anliegt",
+          "c": "wenn durch Spulen ein Wechselstrom fließt",
+          "d": "die Phasenverschiebung elektromagnetischer Wellen beträgt immer 90°"
+        },
+        "correct_answer": "a"
+      },
+      {
+        "id": "ET3.3.8",
+        "question": "Wie ändert sich die Wirbelstromdichte an der Oberfläche bei einer Erhöhung der Permeabilität?",
+        "options": {
+          "a": "Sie wird geringer",
+          "b": "Sie wird größer",
+          "c": "Sie ist unverändert",
+          "d": "Sie wird homogener"
+        },
+        "correct_answer": "a"
+      },
+      {
+        "id": "ET3.3.9",
+        "question": "Wodurch wird die Eindringtiefe der Wirbelströme beeinflusst?",
+        "options": {
+          "a": "Durch die Leitfähigkeit des Prüfgegenstandes",
+          "b": "Durch die Permeabilität des Prüfgegenstandes",
+          "c": "Durch die Frequenz des Wirbelstroms",
+          "d": "Alle Antworten sind richtig"
+        },
+        "correct_answer": "d"
+      },
+      {
+        "id": "ET3.3.10",
+        "question": "Wie wird die relative Permeabilität µr ferromagnetischer Werkstoffe durch die Stärke eines äußeren Magnetfeldes beeinflusst?",
+        "options": {
+          "a": "µr wird stark von der magnetischen Feldstärke beeinflusst",
+          "b": "µr bleibt bis zur Sättigung konstant und wird dann 1",
+          "c": "Gar nicht, die relative Permeabilität ist eine Werkstoffkonstante",
+          "d": "Die relative Permeabilität ändert sich bis zur Sättigung sehr stark und wird dann zu Null"
+        },
+        "correct_answer": "a"
+      },
+      {
+        "id": "ET3.3.11",
+        "question": "Auf welche Frequenz wird das Hochpassfilter bei der automatisierten Gefügeprüfung eingestellt?",
+        "options": {
+          "a": "Größer als das Tiefpassfilter",
+          "b": "Statisch, f=0 Hz",
+          "c": "Größer als ein Hundertsteil der Prüffrequenz",
+          "d": "Die Frequenz ist in Abhängigkeit von Prüfgeschwindigkeit zu wählen"
+        },
+        "correct_answer": "d"
+      },
+      {
+        "id": "ET3.3.12",
+        "question": "Zur Trennung wärmebehandelter von nicht wärmebehandelten Stäben aus Vergütungsstahl soll die Wirbelstromprüfung eingesetzt werden. Welche Aussage ist richtig?",
+        "options": {
+          "a": "Aufgrund der Leitfähigkeitsunterschiede ist eine Trennung möglich",
+          "b": "Aufgrund der Permeabilitätsunterschiede ist eine Trennung möglich",
+          "c": "Die Trennung ist einfach durchführbar, wenn die Permeabilitätseinflüsse durch Gleichfeld-Vormagnetisierung unterdrückt werden",
+          "d": "Eine Trennung ist nicht möglich"
+        },
+        "correct_answer": "c"
+      },
+      {
+        "id": "ET3.3.13",
+        "question": "Welche Sensoranordnung zum Bauteil wird bei der automatisierten Gefügeprüfung häufig angewendet?",
+        "options": {
+          "a": "Innendurchlaufsensor",
+          "b": "Tastsensor",
+          "c": "Segmentsensor",
+          "d": "Außendurchlaufsensor"
+        },
+        "correct_answer": "d"
+      },
+      {
+        "id": "ET3.3.14",
+        "question": "Wie ist bei der Gefügeprüfung eines Prüfloses vorzugehen, wenn keine Justierstücke vorhanden sind?",
+        "options": {
+          "a": "1. Sortierung unterschiedlicher Gruppen mit Wirbelstrom, 2. Ermittlung der zugehörigen Analysewerte im Labor, 3. Festlegen von Sortiergrenzen, 4. Prüfen",
+          "b": "1. Leitfähigkeit und Permeabilität messen, 2. Frequenz berechnen, 3. Prüfen",
+          "c": "1. Arbeitskonstante bestimmen, 2. berechnete Werte einstellen, 3. Prüfen",
+          "d": "1. Erfahrungswerte einstellen, 2. Prüfen (sind die ersten 100 Teile im Toleranzfeld i.O., sonst Einstellwerte variieren)"
+        },
+        "correct_answer": "a"
+      },
+      {
+        "id": "ET3.3.15",
+        "question": "Welche Prüffrequenzen sind für die automatisierte Gefügeprüfung rotationssymmetrischer, ferromagnetischer Bauteile geeignet?",
+        "options": {
+          "a": "Eine Prüffrequenz, bei der der Bauteilradius einer Standardeindringtiefe entspricht ist einzustellen",
+          "b": "nur Prüffrequenzen <1 kHz",
+          "c": "Prüffrequenzen im Hz- bis kHz-Bereich (Grundwellen und/oder Oberwellen), bei denen die Trennung der Werkstoffeigenschaften bestmöglich ist",
+          "d": "Drei Prüffrequenzen werden so eingestellt, dass jeweils ein Drittel des Bauteilradius der Standardeindringtiefe entspricht"
+        },
+        "correct_answer": "c"
+      },
+      {
+        "id": "ET3.3.16",
+        "question": "Kann mit einem Wirbelstromprüfsystem bestehend aus Universalwirbelstromgerät, Kabel und Tastsensor in Absolutschaltung eine einfache Sortieraufgabe gelöst werden?",
+        "options": {
+          "a": "Nein, das ist nicht möglich",
+          "b": "Ja, bei vernachlässigbarer Leitfähigkeit ist die Permeabilität messbar",
+          "c": "Ja, wenn bekannte Eigenschaften auf dem Bildschirm in Phase und Amplitude trennbar sind",
+          "d": "Die Antworten b) und c) sind richtig"
+        },
+        "correct_answer": "d"
+      },
+      {
+        "id": "ET3.3.17",
+        "question": "Welche Einflüsse können bei der Gefügeprüfung Störer sein?",
+        "options": {
+          "a": "Restmagnetismus, äußere Magnetfelder",
+          "b": "Kaltverformung, Geometrieeffekte",
+          "c": "Temperaturunterschiede, Chargeneinflüsse",
+          "d": "Alle oben genannten Einflüsse können Störer sein"
+        },
+        "correct_answer": "d"
+      },
+      {
+        "id": "ET3.3.18",
+        "question": "Ist bei der Gefügeprüfung die Lage der Bauteile in der Spule zu beachten?",
+        "options": {
+          "a": "Ja, die Lage hat einen Einfluss auf das Prüfergebnis",
+          "b": "Nein, bei konstantem Füllungsgrad ist die Lage der Bauteile bedeutungslos",
+          "c": "Ja, bei Kleinteilen",
+          "d": "Ja, die Bauteile müssen zentriert werden"
+        },
+        "correct_answer": "a"
+      },
+      {
+        "id": "ET3.3.19",
+        "question": "Nach Kundenvereinbarung darf der Wicklungsfüllungsgrad 0,5 nicht unterschreiten. Die zu prüfenden Bauteile haben Durchmesser zwischen 22 mm und 24 mm. Welcher Spulendurchmesser darf nicht überschritten werden?",
+        "options": {
+          "a": "31 mm",
+          "b": "34 mm",
+          "c": "44 mm",
+          "d": "48 mm"
+        },
+        "correct_answer": "b"
+      },
+      {
+        "id": "ET3.3.20",
+        "question": "Welcher Werkstoff besitzt die höchste elektrische Leitfähigkeit?",
+        "options": {
+          "a": "Eisen",
+          "b": "Wolfram",
+          "c": "Aluminium",
+          "d": "Silber"
+        },
+        "correct_answer": "d"
+      }
+    ]
+  },
+  "ET3_Wissenstest_4": {
+    "title": "Wirbelstromprüfung - Wissenstest 4",
+    "questions": [
+      {
+        "id": "ET3.4.1",
+        "question": "Wozu dient die Wirbelstromprüfung von Laufflächen an klotzgebremsten Radsätzen?",
+        "options": {
+          "a": "zum Prüfen auf Materialveränderungen/Umwandlungen durch Wärmeeintrag in Folge des Rad-Schiene-Kontaktes",
+          "b": "zum Prüfen auf Querrisse, in Folge von Gefüge Veränderungen durch Wärmeeintrag bei Bremsvorgängen",
+          "c": "zum Prüfen auf Längsrisse, in Folge von Gefüge Veränderungen durch Wärmeeintrag bei Bremsvorgängen",
+          "d": "zum Prüfen auf Querrisse, in Folge von Gefüge Veränderungen durch Wärmeeintrag bei der Reprofilierung"
+        },
+        "correct_answer": "b"
+      },
+      {
+        "id": "ET3.4.2",
+        "question": "Welche Rahmenbedingung/en müssen eingehalten werden, damit eine Risstiefenbestimmung mit Wirbelstrom möglich ist?",
+        "options": {
+          "a": "Die Risslänge muss kleiner als die Sensorwirkbreite sein",
+          "b": "Das Verhältnis der Rissbreite zur Risstiefe ist ohne Einfluss",
+          "c": "Der Rissabstand sollte größer sein als die Hälfte der Sensorwirkbreite",
+          "d": "Der Sensor sollte in einem möglichst großen Abstand zum Prüfobjekt geführt werden"
+        },
+        "correct_answer": "c"
+      },
+      {
+        "id": "ET3.4.3",
+        "question": "Was schränkt die Aussage über die Risstiefenbestimmung mit Wirbelstrom ein?",
+        "options": {
+          "a": "Die stark gekrümmte Kennlinie des Sensors",
+          "b": "Der konstante Abstand zwischen Sensor und Prüfobjekt",
+          "c": "Starke geometrische Veränderungen, wie Knicke oder Verästelungen der Risse",
+          "d": "a) und c) treffen zu"
+        },
+        "correct_answer": "d"
+      },
+      {
+        "id": "ET3.4.4",
+        "question": "Wie erfolgt bei der Auswertung die Trennung zwischen Risssignal und Änderung der Materialeigenschaften der Schiene?",
+        "options": {
+          "a": "über die Ortsfrequenz der Signale",
+          "b": "über die Ortsamplitude der Signale",
+          "c": "über den Liftoff der Signale",
+          "d": "über das Nutz- zu Störverhältnis der Signale"
+        },
+        "correct_answer": "a"
+      },
+      {
+        "id": "ET3.4.5",
+        "question": "Wie ändert sich die Toleranz der Prüfergebnisse mit steigender Schädigungstiefe?",
+        "options": {
+          "a": "die Toleranz der Prüfergebnisse bleibt konstant",
+          "b": "die Toleranz der Prüfergebnisse nimmt ab",
+          "c": "die Toleranz der Prüfergebnisse nimmt zu",
+          "d": "die Wirbelstromergebnisse haben keine Toleranz"
+        },
+        "correct_answer": "c"
+      },
+      {
+        "id": "ET3.4.6",
+        "question": "Welche Dinge werden bei der Ausgabe der Ergebnisse bei den errechneten Schädigungstiefen auf Plausibilität geprüft?",
+        "options": {
+          "a": "der zulässige Lifroff",
+          "b": "Anzahl der HeadCheck pro Meter",
+          "c": "Tiefe des Risses und Ausdehnung auf der Oberfläche",
+          "d": "alle Antworten a) bis c) werden auf Plausibilität geprüft"
+        },
+        "correct_answer": "d"
+      },
+      {
+        "id": "ET3.4.7",
+        "question": "Auf welche Frequenz wird das Tiefpassfilter bei der automatisierten Wirbelstromprüfung eingestellt?",
+        "options": {
+          "a": "Statisch, 0 Hz",
+          "b": "Das Tiefpassfilter muss im Durchlassbereich die Prüfrequenz enthalten",
+          "c": "Die Frequenz ist in Abhängigkeit von Prüfgeschwindigkeit zu wählen",
+          "d": "Kleiner als das Hochpassfilter (Faktor 1/√2)"
+        },
+        "correct_answer": "c"
+      },
+      {
+        "id": "ET3.4.8",
+        "question": "f=5 kHz, σ=50 MS/m, μ=1 Daraus ergibt sich eine Standardeindringtiefe δ=1 mm. In welcher Tiefe beträgt die Wirbelstromdichte bei den gegebenen Parametern 50%?",
+        "options": {
+          "a": "0,37 mm",
+          "b": "0,5 mm",
+          "c": "0,7 mm",
+          "d": "1,0 mm"
+        },
+        "correct_answer": "c"
+      },
+      {
+        "id": "ET3.4.9",
+        "question": "Bei welcher der nachfolgend aufgeführten Prüfrequenzen wird die größte Eindringtiefe erreicht?",
+        "options": {
+          "a": "10 Hz",
+          "b": "0,1 kHz",
+          "c": "10 kHz",
+          "d": "0,1 MHz"
+        },
+        "correct_answer": "a"
+      },
+      {
+        "id": "ET3.4.10",
+        "question": "Bei welchem Material ist bei einer Wirbelstromprüfung mit einer Frequenz von f=10 kHz die Eindringtiefe der Wirbelströme größer?",
+        "options": {
+          "a": "Bei Messing größer als bei Kupfer",
+          "b": "Bei Kupfer größer als bei Messing",
+          "c": "Bei Messing und Kupfer gleich groß",
+          "d": "Die Eindringtiefe ist nur von der Frequenz abhängig"
+        },
+        "correct_answer": "a"
+      },
+      {
+        "id": "ET3.4.11",
+        "question": "Wofür ist die Induktivität L ein Maß?",
+        "options": {
+          "a": "Sie ist ein Maß für das Verhältnis μ0/μr",
+          "b": "Sie ist ein Maß für den Wechselstromwiderstand",
+          "c": "Sie ist ein Maß für den Gleichstromanteil bei der Vormagnetisierung ferromagnetischer Bauteile",
+          "d": "Sie ist ein Maß für das magnetische Speichervermögen"
+        },
+        "correct_answer": "d"
+      },
+      {
+        "id": "ET3.4.12",
+        "question": "Wie groß ist die Phasenverschiebung eines Wirbelstromsignals pro Standardeindrigtiefe?",
+        "options": {
+          "a": "α = 37°",
+          "b": "α = 57°",
+          "c": "α = π",
+          "d": "α = 2πf"
+        },
+        "correct_answer": "b"
+      },
+      {
+        "id": "ET3.4.13",
+        "question": "Was besagt die Lenz´sche Regel?",
+        "options": {
+          "a": "Der Induktionsstrom ist stets so gerichtet, dass er seiner Entstehungsursache entgegenwirkt",
+          "b": "Strom und Spannung liegen in einer Phase",
+          "c": "Die Permeabilität ist abhängig von der Feldstärke",
+          "d": "Strom und Feld stehen 90° zueinander"
+        },
+        "correct_answer": "a"
+      },
+      {
+        "id": "ET3.4.14",
+        "question": "Wie unterscheiden sich die Rissanzeigen zweier Oberflächenrisse gleicher Rissbreite (t₁=2 mm und t₂=4 mm) bei einer Standardeindringtiefe δ=250 μm?",
+        "options": {
+          "a": "Die Amplituden verhalten sich wie 1 : 2",
+          "b": "Die Amplituden sind ungefähr gleich groß",
+          "c": "Die Amplituden verhalten sich wie 2 : (1/e)",
+          "d": "Beide Risse werden nicht angezeigt, da die Eindringtiefe zu klein ist"
+        },
+        "correct_answer": "b"
+      },
+      {
+        "id": "ET3.4.15",
+        "question": "Wodurch wird das Nutz- Störsignal-Verhältnis bei der automatisierten Wirbelstromprüfung verbessert?",
+        "options": {
+          "a": "Optimierung der Vorverstärkung",
+          "b": "Optimierung der Filterfrequenzen fᵇ < < fᵇ",
+          "c": "Absenken der Erregerstromstärke mit dB-Ausgleich",
+          "d": "Wahl einer Sektorbende"
+        },
+        "correct_answer": "b"
+      }
+    ]
+  },
+  "ET3_Wissenstest_5": {
+    "title": "Wirbelstromprüfung - Wissenstest 5",
+    "questions": [
+      {
+        "id": "ET3.5.1",
+        "question": "Bei einem Durchlaufsensor beträgt der wirksame Spulendurchmesser 48 mm, das zu prüfendes Rohr hat einen Innendurchmesser von 50 mm. Wie groß ist der Füllungsgrad?",
+        "options": {
+          "a": "1,1",
+          "b": "0,96",
+          "c": "0,92",
+          "d": "π/2"
+        },
+        "correct_answer": "b"
+      },
+      {
+        "id": "ET3.5.2",
+        "question": "Wo werden Tastsensoren in Differenzschaltung (Selbstvergleich) vor allem verwendet?",
+        "options": {
+          "a": "Zur Fehlerprüfung, wenn kleine Fehler gesucht werden",
+          "b": "Bei der Messung der Permeabilität",
+          "c": "Bei der Messung der Leitfähigkeit",
+          "d": "Bei der Rohrprüfung als Schlitzwächter"
+        },
+        "correct_answer": "a"
+      },
+      {
+        "id": "ET3.5.3",
+        "question": "Welche Technik wird bei der Wirbelstromrohrprüfung auf kleinste Fehler angewendet?",
+        "options": {
+          "a": "Technik mit rotierenden Sonden",
+          "b": "Durchlaufspulentecknik",
+          "c": "Segmentspulentecknik",
+          "d": "a), b) und c) sind möglich"
+        },
+        "correct_answer": "a"
+      },
+      {
+        "id": "ET3.5.4",
+        "question": "Wo ist bei einem langen, zylindrischen Stab im Bereich eines Durchlaufsensors die Wirbelstromdichte am größten?",
+        "options": {
+          "a": "Auf der Mantelfläche des Stabes",
+          "b": "In der Stabmitte",
+          "c": "In einer Tiefe von 37 % bezogen auf den Radius",
+          "d": "Alle Antworten sind falsch"
+        },
+        "correct_answer": "a"
+      },
+      {
+        "id": "ET3.5.6",
+        "question": "In welche Richtung wird bei der Rohrprüfung mit einem Differenzsensor das Signal vom Bezugstandard häufig gelegt?",
+        "options": {
+          "a": "In Phasenrichtung des kleinsten Signals",
+          "b": "In Y-Richtung",
+          "c": "45° zum Abhebeeffekt (Lift-Off)",
+          "d": "Je nach Testfehler sind alle Antworten richtig"
+        },
+        "correct_answer": "c"
+      },
+      {
+        "id": "ET3.5.7",
+        "question": "Warum sollte in einer Rohrprüfanlage das Rohr zentriert sein?",
+        "options": {
+          "a": "Weil die Rohre sonst am Sensor schieifen",
+          "b": "Damit die Empfindlichkeit über dem Umfang gleichmäßig ist",
+          "c": "Um die Endeneffekte auszublenden",
+          "d": "Rohren zentrieren sich immer automatisch"
+        },
+        "correct_answer": "b"
+      },
+      {
+        "id": "ET3.5.8",
+        "question": "Welche Aussage bei der Prüfung von Rohren mit Außendurchlaufsensoren trifft zu?",
+        "options": {
+          "a": "Innenfehler können nicht gefunden werden",
+          "b": "Die Außenfläche wird empfindlicher geprüft als die Innenfläche",
+          "c": "Mit Hilfe von Differenzsensoren kann mit gleicher Empfindlichkeit auf Innen- und Außenfehler geprüft werden",
+          "d": "Alle Antworten sind richtig"
+        },
+        "correct_answer": "b"
+      },
+      {
+        "id": "ET3.5.9",
+        "question": "Wovon hängt die Amplitude des Bohrungssignals eines ferromagnetischen Rohres ab",
+        "options": {
+          "a": "Von der Größe der Bohrung",
+          "b": "Von der Verstärkung",
+          "c": "Von der Gleichfeldvormagnetisierung",
+          "d": "Alles ist richtig"
+        },
+        "correct_answer": "d"
+      },
+      {
+        "id": "ET3.5.10",
+        "question": "Welche der Prüfgegenstände werden mit Außendurchlaufsensoren geprüft?",
+        "options": {
+          "a": "Stangen, Draht",
+          "b": "Sechskantprofile",
+          "c": "Bleche",
+          "d": "Die Antworten (a) und (b) sind richtig"
+        },
+        "correct_answer": "d"
+      },
+      {
+        "id": "ET3.5.11",
+        "question": "Wann benutzt man ein Hochpassfilter?",
+        "options": {
+          "a": "Bei der Handprüfung",
+          "b": "Bei der Rohrprüfung",
+          "c": "Bei der Prüfung mit Rotiersensoren",
+          "d": "Die Antworten (b) und (c) sind richtig"
+        },
+        "correct_answer": "d"
+      },
+      {
+        "id": "ET3.5.12",
+        "question": "Aluminiumrohre mit einem Durchmesser von 80 mm und 1 mm Wanddicke sollen mit hoher Prüfgeschwindigkeit auf Herstellungsfehler geprüft werden. Welcher Sensor ist dafür geeignet?",
+        "options": {
+          "a": "Innendurchlaufsensor",
+          "b": "Außendurchlaufsensor",
+          "c": "Rotierender Multidifferenzsensor",
+          "d": "Tastsensor"
+        },
+        "correct_answer": "b"
+      },
+      {
+        "id": "ET3.5.14",
+        "question": "Was ist bei der Prüfung in der Y-t-Darstellung zu beachten?",
+        "options": {
+          "a": "Bei der Justierung in der X-Y-Darstellung ist die Phasenlage unwichtig",
+          "b": "Bei der Justierung in der X-Y-Darstellung sollte das Nutz-Signal senkrecht stehen",
+          "c": "Beim Prüfen geht die Phaseninformation verloren",
+          "d": "Die Antworten (b) und (c) sind richtig"
+        },
+        "correct_answer": "b"
+      }
+    ]
+  }
+}

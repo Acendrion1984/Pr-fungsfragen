@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Wirbelstromprüfung Quiz</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 15px;
+            min-height: 100vh;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            padding: 20px;
+            overflow: hidden;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin: 0 0 10px 0;
+            font-size: 1.5em;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #7f8c8d;
+            margin-bottom: 25px;
+            font-size: 0.9em;
+        }
+        
+        select, button {
+            width: 100%;
+            padding: 16px;
+            border-radius: 10px;
+            border: 2px solid #ddd;
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+        
+        button {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        button:active {
+            transform: scale(0.98);
+        }
+        
+        .quiz-container {
+            display: none;
+        }
+        
+        .question-container {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border-left: 5px solid #3498db;
+        }
+        
+        .question-text {
+            font-weight: 600;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+        
+        .option {
+            padding: 15px;
+            background: white;
+            border: 2px solid #e1e8ed;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+        
+        .option:active {
+            background: #e1f0fa;
+            border-color: #3498db;
+        }
+        
+        .option.selected {
+            background: #e1f0fa;
+            border-color: #3498db;
+        }
+        
+        .navigation {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .navigation button {
+            flex: 1;
+            margin-bottom: 0;
+        }
+        
+        #prev-btn {
+            background: linear-gradient(135deg, #95a5a6, #7f8c8d);
+        }
+        
+        #next-btn {
+            background: linear-gradient(135deg, #2ecc71, #27ae60);
+        }
+        
+        .progress-bar {
+            height: 6px;
+            background: #ecf0f1;
+            border-radius: 3px;
+            margin: 15px 0;
+            overflow: hidden;
+        }
+        
+        .progress {
+            height: 100%;
+            background: linear-gradient(90deg, #3498db, #2ecc71);
+            width: 0%;
+            transition: width 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Wirbelstromprüfung Quiz</h1>
+        <div class="subtitle">Testen Sie Ihr Wissen</div>
+        
+        <select id="test-select">
+            <option value="">Test auswählen...</option>
+        </select>
+        
+        <button id="start-quiz">Quiz starten</button>
+        
+        <div class="quiz-container" id="quiz-container">
+            <div class="progress-bar">
+                <div class="progress" id="progress"></div>
+            </div>
+            
+            <div id="question-area"></div>
+            
+            <div class="navigation">
+                <button id="prev-btn" disabled>← Zurück</button>
+                <button id="next-btn">Weiter →</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile-optimiertes Quiz
+        document.addEventListener('DOMContentLoaded', async function() {
+            try {
+                // JSON laden
+                const response = await fetch('./quiz-data.json');
+                const quizData = await response.json();
+                
+                // Tests ins Dropdown laden
+                const testSelect = document.getElementById('test-select');
+                for (const testId in quizData) {
+                    const option = document.createElement('option');
+                    option.value = testId;
+                    option.textContent = quizData[testId].title;
+                    testSelect.appendChild(option);
+                }
+                
+                // Quiz starten
+                document.getElementById('start-quiz').addEventListener('click', function() {
+                    const testId = testSelect.value;
+                    if (!testId) return alert('Bitte Test auswählen');
+                    
+                    startQuiz(quizData[testId]);
+                });
+                
+            } catch (error) {
+                alert('Quiz-Daten konnten nicht geladen werden.');
+            }
+        });
+
+        function startQuiz(test) {
+            const questions = [...test.questions].sort(() => Math.random() - 0.5);
+            let currentIndex = 0;
+            let answers = [];
+            
+            showQuestion();
+            
+            function showQuestion() {
+                const question = questions[currentIndex];
+                const options = Object.entries(question.options).sort(() => Math.random() - 0.5);
+                
+                // Fortschritt
+                document.getElementById('progress').style.width = 
+                    `${((currentIndex + 1) / questions.length) * 100}%`;
+                
+                // Frage anzeigen
+                document.getElementById('question-area').innerHTML = `
+                    <div class="question-container">
+                        <div class="question-text">${question.question}</div>
+                        <div class="options-container">
+                            ${options.map(([key, value]) => `
+                                <div class="option ${answers[currentIndex] === key ? 'selected' : ''}" 
+                                     data-key="${key}">
+                                    <strong>${key.toUpperCase()}.</strong> ${value}
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+                
+                // Event Listener für Options
+                document.querySelectorAll('.option').forEach(option => {
+                    option.addEventListener('click', function() {
+                        document.querySelectorAll('.option').forEach(opt => {
+                            opt.classList.remove('selected');
+                        });
+                        this.classList.add('selected');
+                        answers[currentIndex] = this.getAttribute('data-key');
+                        updateNavigation();
+                    });
+                });
+                
+                updateNavigation();
+            }
+            
+            function updateNavigation() {
+                document.getElementById('prev-btn').disabled = currentIndex === 0;
+                document.getElementById('next-btn').textContent = 
+                    currentIndex === questions.length - 1 ? 'Ergebnis' : 'Weiter →';
+            }
+            
+            // Navigation
+            document.getElementById('prev-btn').onclick = () => {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    showQuestion();
+                }
+            };
+            
+            document.getElementById('next-btn').onclick = () => {
+                if (currentIndex < questions.length - 1) {
+                    currentIndex++;
+                    showQuestion();
+                } else {
+                    showResults();
+                }
+            };
+            
+            function showResults() {
+                const correct = answers.reduce((count, answer, i) => 
+                    count + (answer === questions[i].correct_answer ? 1 : 0), 0);
+                
+                document.getElementById('question-area').innerHTML = `
+                    <div class="question-container">
+                        <h2>Ergebnis: ${correct}/${questions.length}</h2>
+                        <p>${(correct/questions.length*100).toFixed(1)}% richtig</p>
+                        <button onclick="location.reload()">Neues Quiz</button>
+                    </div>
+                `;
+                
+                document.getElementById('prev-btn').style.display = 'none';
+                document.getElementById('next-btn').style.display = 'none';
+            }
+            
+            // Quiz Container anzeigen
+            document.getElementById('quiz-container').style.display = 'block';
+            document.getElementById('start-quiz').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
