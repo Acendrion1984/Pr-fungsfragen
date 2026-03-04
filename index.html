@@ -2,281 +2,714 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Wirbelstromprüfung Quiz</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultraschallprüfung - Komplettes Wissensquiz</title>
     <style>
-        * {
-            box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            -webkit-tap-highlight-color: transparent;
-        }
-        
         body {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            margin: 0;
-            padding: 15px;
-            min-height: 100vh;
-            color: #333;
-        }
-        
-        .container {
-            max-width: 100%;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
             margin: 0 auto;
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
             padding: 20px;
-            overflow: hidden;
+            background-color: #f5f5f5;
         }
-        
         h1 {
-            text-align: center;
             color: #2c3e50;
-            margin: 0 0 10px 0;
-            font-size: 1.5em;
-        }
-        
-        .subtitle {
             text-align: center;
-            color: #7f8c8d;
-            margin-bottom: 25px;
-            font-size: 0.9em;
+            margin-bottom: 30px;
         }
-        
-        select, button {
-            width: 100%;
-            padding: 16px;
-            border-radius: 10px;
-            border: 2px solid #ddd;
-            font-size: 16px;
-            margin-bottom: 15px;
-        }
-        
-        button {
-            background: linear-gradient(135deg, #3498db, #2980b9);
-            color: white;
-            border: none;
-            font-weight: bold;
-            cursor: pointer;
-        }
-        
-        button:active {
-            transform: scale(0.98);
-        }
-        
         .quiz-container {
-            display: none;
-        }
-        
-        .question-container {
-            background: #f8f9fa;
-            padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            border-left: 5px solid #3498db;
-        }
-        
-        .question-text {
-            font-weight: 600;
-            margin-bottom: 15px;
-            font-size: 1.1em;
-        }
-        
-        .option {
-            padding: 15px;
-            background: white;
-            border: 2px solid #e1e8ed;
+            background-color: white;
             border-radius: 8px;
-            margin-bottom: 10px;
-            cursor: pointer;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
         }
-        
-        .option:active {
-            background: #e1f0fa;
-            border-color: #3498db;
+        .question {
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #2c3e50;
+            font-size: 18px;
         }
-        
-        .option.selected {
-            background: #e1f0fa;
-            border-color: #3498db;
-        }
-        
-        .navigation {
+        .options {
             display: flex;
+            flex-direction: column;
             gap: 10px;
         }
-        
-        .navigation button {
-            flex: 1;
-            margin-bottom: 0;
+        .option {
+            display: flex;
+            align-items: center;
+            padding: 12px 15px;
+            border-radius: 6px;
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            cursor: pointer;
+            transition: all 0.3s;
         }
-        
-        #prev-btn {
-            background: linear-gradient(135deg, #95a5a6, #7f8c8d);
+        .option:hover {
+            background-color: #e9ecef;
+            border-color: #ced4da;
         }
-        
-        #next-btn {
-            background: linear-gradient(135deg, #2ecc71, #27ae60);
+        .option input {
+            margin-right: 12px;
+            transform: scale(1.2);
         }
-        
-        .progress-bar {
-            height: 6px;
-            background: #ecf0f1;
-            border-radius: 3px;
-            margin: 15px 0;
-            overflow: hidden;
+        .option-label {
+            flex-grow: 1;
         }
-        
+        .submit-btn {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            display: block;
+            margin: 30px auto;
+            transition: background-color 0.3s;
+        }
+        .submit-btn:hover {
+            background-color: #2980b9;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 6px;
+            display: none;
+            font-size: 15px;
+            line-height: 1.5;
+        }
+        .correct {
+            background-color: #d4edda;
+            color: #155724;
+            border-left: 4px solid #28a745;
+        }
+        .incorrect {
+            background-color: #f8d7da;
+            color: #721c24;
+            border-left: 4px solid #dc3545;
+        }
+        .explanation {
+            margin-top: 15px;
+            padding: 15px;
+            background-color: #e7f1ff;
+            border-left: 4px solid #007bff;
+            font-size: 14px;
+            line-height: 1.5;
+            border-radius: 6px;
+            display: none;
+        }
         .progress {
-            height: 100%;
-            background: linear-gradient(90deg, #3498db, #2ecc71);
-            width: 0%;
-            transition: width 0.3s;
+            text-align: center;
+            margin-bottom: 25px;
+            font-weight: bold;
+            font-size: 16px;
+            color: #495057;
+        }
+        @media (max-width: 600px) {
+            body {
+                padding: 15px;
+            }
+            .quiz-container {
+                padding: 15px;
+            }
+            .option {
+                padding: 10px 12px;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Wirbelstromprüfung Quiz</h1>
-        <div class="subtitle">Testen Sie Ihr Wissen</div>
-        
-        <select id="test-select">
-            <option value="">Test auswählen...</option>
-        </select>
-        
-        <button id="start-quiz">Quiz starten</button>
-        
-        <div class="quiz-container" id="quiz-container">
-            <div class="progress-bar">
-                <div class="progress" id="progress"></div>
-            </div>
-            
-            <div id="question-area"></div>
-            
-            <div class="navigation">
-                <button id="prev-btn" disabled>← Zurück</button>
-                <button id="next-btn">Weiter →</button>
-            </div>
+    <h1>Ultraschallprüfung - Komplettes Wissensquiz</h1>
+    <div class="progress">Fragen 1-20 von 20</div>
+    
+    <!-- Frage 1 -->
+    <div class="quiz-container">
+        <div class="question">1. Welche Vorteile bietet die Impuls-Echo-Technik gegenüber der Durchschallungstechnik?</div>
+        <div class="options">
+            <label class="option">
+                <input type="radio" name="q1" value="A">
+                <span class="option-label">A) Es werden zwei Prüfköpfe benötigt.</span>
+            </label>
+            <label class="option">
+                <input type="radio" name="q1" value="B">
+                <span class="option-label">B) Die Fehlerlage kann genau bestimmt werden.</span>
+            </label>
+            <label class="option">
+                <input type="radio" name="q1" value="C">
+                <span class="option-label">C) Ankoppelschwankungen beeinflussen die Echoposition.</span>
+            </label>
+            <label class="option">
+                <input type="radio" name="q1" value="D">
+                <span class="option-label">D) Der Prüfgegenstand muss von beiden Seiten zugänglich sein.</span>
+            </label>
+        </div>
+        <div id="result1" class="result"></div>
+        <div id="explanation1" class="explanation">
+            <strong>Begründung:</strong> Die Impuls-Echo-Technik ermöglicht die genaue Bestimmung der Fehlerlage durch Messung der Echoperationszeit. Sie benötigt nur einen Prüfkopf (Sender+Empfänger) und ist unempfindlich gegen Ankoppelschwankungen bei der Echoposition.
         </div>
     </div>
 
-    <script>
-        // Mobile-optimiertes Quiz
-        document.addEventListener('DOMContentLoaded', async function() {
-            try {
-                // JSON laden
-                const response = await fetch('./quiz-data.json');
-                const quizData = await response.json();
-                
-                // Tests ins Dropdown laden
-                const testSelect = document.getElementById('test-select');
-                for (const testId in quizData) {
-                    const option = document.createElement('option');
-                    option.value = testId;
-                    option.textContent = quizData[testId].title;
-                    testSelect.appendChild(option);
-                }
-                
-                // Quiz starten
-                document.getElementById('start-quiz').addEventListener('click', function() {
-                    const testId = testSelect.value;
-                    if (!testId) return alert('Bitte Test auswählen');
-                    
-                    startQuiz(quizData[testId]);
-                });
-                
-            } catch (error) {
-                alert('Quiz-Daten konnten nicht geladen werden.');
-            }
-        });
+    <!-- Frage 2 -->
+    <div class="quiz-container">
+        <div class="question">2. Was ist ein charakteristisches Merkmal der Durchschallungstechnik?</div>
+        <div class="options">
+            <label class="option">
+                <input type="radio" name="q2" value="A">
+                <span class="option-label">A) Ein Prüfkopf dient als Sender und Empfänger.</span>
+            </label>
+            <label class="option">
+                <input type="radio" name="q2" value="B">
+                <span class="option-label">B) Der Sendeimpuls wird nicht angezeigt.</span>
+            </label>
+            <label class="option">
+                <input type="radio" name="q2" value="C">
+                <span class="option-label">C) Sie eignet sich nur für dicke Prüfgegenstände.</span>
+            </label>
+            <label class="option">
+                <input type="radio" name="q2" value="D">
+                <span class="option-label">D) Die Fehlerlage wird direkt angezeigt.</span>
+            </label>
+        </div>
+        <div id="result2" class="result"></div>
+        <div id="explanation2" class="explanation">
+            <strong>Begründung:</strong> Bei der Durchschallungstechnik werden separate Sende- und Empfangsprüfköpfe verwendet. Der Sendeimpuls erscheint nicht im Bild, da nur die am Empfänger ankommende Schallenergie ausgewertet wird.
+        </div>
+    </div>
 
-        function startQuiz(test) {
-            const questions = [...test.questions].sort(() => Math.random() - 0.5);
-            let currentIndex = 0;
-            let answers = [];
-            
-            showQuestion();
-            
-            function showQuestion() {
-                const question = questions[currentIndex];
-                const options = Object.entries(question.options).sort(() => Math.random() - 0.5);
-                
-                // Fortschritt
-                document.getElementById('progress').style.width = 
-                    `${((currentIndex + 1) / questions.length) * 100}%`;
-                
-                // Frage anzeigen
-                document.getElementById('question-area').innerHTML = `
-                    <div class="question-container">
-                        <div class="question-text">${question.question}</div>
-                        <div class="options-container">
-                            ${options.map(([key, value]) => `
-                                <div class="option ${answers[currentIndex] === key ? 'selected' : ''}" 
-                                     data-key="${key}">
-                                    <strong>${key.toUpperCase()}.</strong> ${value}
-                                </div>
-                            `).join('')}
-                        </div>
-                    </div>
-                `;
-                
-                // Event Listener für Options
-                document.querySelectorAll('.option').forEach(option => {
-                    option.addEventListener('click', function() {
-                        document.querySelectorAll('.option').forEach(opt => {
-                            opt.classList.remove('selected');
-                        });
-                        this.classList.add('selected');
-                        answers[currentIndex] = this.getAttribute('data-key');
-                        updateNavigation();
-                    });
-                });
-                
-                updateNavigation();
-            }
-            
-            function updateNavigation() {
-                document.getElementById('prev-btn').disabled = currentIndex === 0;
-                document.getElementById('next-btn').textContent = 
-                    currentIndex === questions.length - 1 ? 'Ergebnis' : 'Weiter →';
-            }
-            
-            // Navigation
-            document.getElementById('prev-btn').onclick = () => {
-                if (currentIndex > 0) {
-                    currentIndex--;
-                    showQuestion();
-                }
-            };
-            
-            document.getElementById('next-btn').onclick = () => {
-                if (currentIndex < questions.length - 1) {
-                    currentIndex++;
-                    showQuestion();
+    <!-- Frage 3 -->
+    <div class="quiz-container">
+        <div class="question">3. Welche Kenngrößen sind für die Ultraschallprüfung besonders wichtig?</div>
+        <div class="options">
+            <label class="option">
+                <input type="radio" name="q3" value="A">
+                <span class="option-label">A) Farbe, Gewicht, Temperatur</span>
+            </label>
+            <label class="option">
+                <input type="radio" name="q3" value="B">
+                <span class="option-label">B) Schallgeschwindigkeit, Oberflächenzustand, Gefügezustand</span>
+            </label>
+            <label class="option">
+                <input type="radio" name="q3" value="C">
+                <span class="option-label">C) Magnetische Leitfähigkeit, elektrischer Widerstand</span>
+            </label>
+            <label class="option">
+                <input type="radio" name="q3" value="D">
+                <span class="option-label">D) Härte, Dichte, chemische Zusammensetzung</span>
+            </label>
+        </div>
+        <div id="result3" class="result"></div>
+        <div id="explanation3" class="explanation">
+            <strong>Begründung:</strong> Schallgeschwindigkeit (für Fehlerortung), Oberflächenzustand (für Ankopplung) und Gefügezustand (für Schallschwächung) sind die drei entscheidenden Kenngrößen in der Ultraschallprüfung.
+        </div>
+    </div>
+
+    <!-- Frage 4 -->
+    <div class="quiz-container">
+        <div class="question">4. Was beschreibt der Begriff "akustisch isotrop" in der Ultraschallprüfung?</div>
+        <div class="options">
+            <label class="option">
+                <input type="radio" name="q4" value="A">
+                <span class="option-label">A) Richtungsabhängige Schallgeschwindigkeit.</span>
+            </label>
+            <label class="option">
+                <input type="radio" name="q4" value="B">
+                <span class="option-label">B) Keine messbaren richtungsabhängigen Unterschiede.</span>
+            </label>
+            <label class="option">
+                <input type="radio" name="q4" value="C">
+                <span class="option-label">C) Grobkörnige Kristallstruktur.</span>
+            </label>
+            <label class="option">
+                <input type="radio" name="q4" value="D">
+                <span class="option-label">D) Hohe Schallschwächung.</span>
+            </label>
+        </div>
+        <div id="result4" class="result"></div>
+        <div id="explanation4" class="explanation">
+            <strong>Begründung:</strong> Akustisch isotrope Materialien zeigen keine richtungsabhängigen Unterschiede in der Schallausbreitung, was typisch für feinkörnige, homogene Werkstoffe ist.
+        </div>
+    </div>
+
+    <!-- Frage 5 -->
+    <div class="quiz-container">
+        <div class="question">5. Welche Ursachen führen zu einer Echohöhenabnahme im Fernfeld?</div>
+        <div class="options">
+            <label class="option">
+                <input type="radio" name="q5" value="A">
+                <span class="option-label">A) Absorption, Streuung, Schallschwächung</span>
+            </label>
+            <label class="option">
+                <input type="radio" name="q5" value="B">
+                <span class="option-label">B) Reflektion, Brechung, Beugung</span>
+            </label>
+            <label class="option">
+                <input type="radio" name="q5" value="C">
+                <span class="option-label">C) Temperaturänderung, Druckänderung</span>
+            </label>
+            <label class="option">
+                <input type="radio" name="q5" value="D">
+                <span class="option-label">D) Elektromagnetische Interferenz</span>
+            </label>
+        </div>
+        <div id="result5" class="result"></div>
+        <div id="explanation5" class="explanation">
+            <strong>Begründung:</strong> Im Fernfeld nimmt die Echohöhe durch Absorption (Energieumwandlung in Wärme), Streuung (an Gefügeinhomogenitäten) und geometrische Schallschwächung (Divergenz des Schallfelds) ab.
+        </div>
+    </div>
+
+    <!-- Frage 6 -->
+    <div class="quiz-container">
+        <div class="question">6. Welcher Oberflächenzustand ist für die Ultraschallprüfung am günstigsten?</div>
+        <div class="options">
+            <label class="option">
+                <input type="radio" name="q6" value="A">
+                <span class="option-label">A) Grob gedrehte Oberfläche</span>
+            </label>
+            <label class="option">
+                <input type="radio" name="q6" value="B">
+                <span class="option-label">B) Gegossene Oberfläche</span>
+            </label>
+            <label class="option">
+                <input type="radio" name="q6" value="C">
+                <span class="option-label">C) Geschliffene oder polierte Oberfläche</span>
+            </label>
+            <label class="option">
+                <input type="radio" name="q6" value="D">
+                <span class="option-label">D) Raue Gussoberfläche</span>
+            </label>
+        </div>
+        <div id="result6" class="result"></div>
+        <div id="explanation6" class="explanation">
+            <strong>Begründung:</strong> Geschliffene oder polierte Oberflächen ermöglichen die beste Schalleinkopplung, da sie geringe Ankopplungsverluste und eine gleichmäßige Schalleintrittsfläche bieten.
+        </div>
+    </div>
+
+    <!-- Frage 7 -->
+    <div class="quiz-container">
+        <div class="question">7. Was ist ein indirekter Fehlernachweis?</div>
+        <div class="options">
+            <label class="option">
+                <input type="radio" name="q7" value="A">
+                <span class="option-label">A) Fehler werden durch Rückwandeches sichtbar.</span>
+            </label>
+            <label class="option">
+                <input type="radio" name="q7" value="B">
+                <span class="option-label">B) Fehler werden durch Schattenbildung indiziert.</span>
+            </label>
+            <label class="option">
+                <input type="radio" name="q7" value="C">
+                <span class="option-label">C) Fehler werden direkt auf dem Bildschirm angezeigt.</span>
+            </label>
+            <label class="option">
+                <input type="radio" name="q7" value="D">
+                <span class="option-label">D) Fehler werden durch Schallgeschwindigkeitsänderung erkannt.</span>
+            </label>
+        </div>
+        <div id="result7" class="result"></div>
+        <div id="explanation7" class="explanation">
+            <strong>Begründung:</strong> Beim indirekten Nachweis werden Fehler nicht durch ihr direktes Echo erkannt, sondern durch das Fehlen von erwarteten Signalen (z.B. Rückwandecho) oder durch Schattenbildung hinter dem Fehler.
+        </div>
+    </div>
+
+    <!-- Frage 8 -->
+    <div class="quiz-container">
+        <div class="question">8. Welche Technik wird bei Senkrechteinschaltung angewendet, wenn der Prüfkopf direkten Kontakt mit dem Prüfgegenstand hat?</div>
+        <div class="options">
+            <label class="option">
+                <input type="radio" name="q8" value="A">
+                <span class="option-label">A) Tauchtechnik</span>
+            </label>
+            <label class="option">
+                <input type="radio" name="q8" value="B">
+                <span class="option-label">B) Kontakttechnik</span>
+            </label>
+            <label class="option">
+                <input type="radio" name="q8" value="C">
+                <span class="option-label">C) Durchschallungstechnik</span>
+            </label>
+            <label class="option">
+                <input type="radio" name="q8" value="D">
+                <span class="option-label">D) Schrägeinschaltung</span>
+            </label>
+        </div>
+        <div id="result8" class="result"></div>
+        <div id="explanation8" class="explanation">
+            <strong>Begründung:</strong> Die Kontakttechnik zeichnet sich durch direkten mechanischen Kontakt zwischen Prüfkopf und Prüfobjekt aus, wobei ein Koppelmittel (z.B. Gel) die Schallübertragung verbessert.
+        </div>
+    </div>
+
+    <!-- Frage 9 -->
+    <div class="quiz-container">
+        <div class="question">9. Was bestimmt die Reflexion bzw. Durchlässigkeit einer Schallwelle an einer Grenzfläche?</div>
+        <div class="options">
+            <label class="option">
+                <input type="radio" name="q9" value="A">
+                <span class="option-label">A) Farbe der Medien</span>
+            </label>
+            <label class="option">
+                <input type="radio" name="q9" value="B">
+                <span class="option-label">B) Temperaturunterschied</span>
+            </label>
+            <label class="option">
+                <input type="radio" name="q9" value="C">
+                <span class="option-label">C) Akustische Impedanz (Dichte × Schallgeschwindigkeit)</span>
+            </label>
+            <label class="option">
+                <input type="radio" name="q9" value="D">
+                <span class="option-label">D) Magnetische Permeabilität</span>
+            </label>
+        </div>
+        <div id="result9" class="result"></div>
+        <div id="explanation9" class="explanation">
+            <strong>Begründung:</strong> Die akustische Impedanz (Z = ρ·c) bestimmt das Reflexions- und Transmissionsverhalten an Grenzflächen. Große Impedanzunterschiede führen zu stärkerer Reflexion.
+        </div>
+    </div>
+
+    <!-- Frage 10 -->
+    <div class="quiz-container">
+        <div class="question">10. Wann ist die Schalldurchlässigkeit an einer Grenzfläche am besten?</div>
+        <div class="options">
+            <label class="option">
+                <input type="radio" name="q10" value="A">
+                <span class="option-label">A) Wenn die akustischen Impedanzen stark unterschiedlich sind.</span>
+            </label>
+            <label class="option">
+                <input type="radio" name="q10" value="B">
+                <span class="option-label">B) Wenn die akustischen Impedanzen ähnlich sind (Impedanzanpassung).</span>
+            </label>
+            <label class="option">
+                <input type="radio" name="q10" value="C">
+                <span class="option-label">C) Wenn die Dichte eines Mediums null ist.</span>
+            </label>
+            <label class="option">
+                <input type="radio" name="q10" value="D">
+                <span class="option-label">D) Wenn die Schallgeschwindigkeit in beiden Medien gleich ist.</span>
+            </label>
+        </div>
+        <div id="result10" class="result"></div>
+        <div id="explanation10" class="explanation">
+            <strong>Begründung:</strong> Bei ähnlichen akustischen Impedanzen (Impedanzanpassung) wird der größte Teil der Schallenergie durch die Grenzfläche übertragen, da nur wenig reflektiert wird.
+        </div>
+    </div>
+
+    <!-- Frage 11 -->
+    <div class="quiz-container">
+        <div class="question">11. Wie wird eine Flächennormale definiert?</div>
+        <div class="options">
+            <label class="option">
+                <input type="radio" name="q11" value="A">
+                <span class="option-label">A) Eine Linie parallel zur Grenzfläche.</span>
+            </label>
+            <label class="option">
+                <input type="radio" name="q11" value="B">
+                <span class="option-label">B) Eine Gerade, die senkrecht auf der Grenzfläche steht.</span>
+            </label>
+            <label class="option">
+                <input type="radio" name="q11" value="C">
+                <span class="option-label">C) Eine Kurve entlang der Schallausbreitung.</span>
+            </label>
+            <label class="option">
+                <input type="radio" name="q11" value="D">
+                <span class="option-label">D) Eine Tangente an die Grenzfläche.</span>
+            </label>
+        </div>
+        <div id="result11" class="result"></div>
+        <div id="explanation11" class="explanation">
+            <strong>Begründung:</strong> Die Flächennormale ist eine gedachte Linie, die senkrecht (im 90°-Winkel) zur Grenzfläche bzw. zur Oberfläche des Prüfobjekts steht und als Referenz für Winkelangaben dient.
+        </div>
+    </div>
+
+    <!-- Frage 12 -->
+    <div class="quiz-container">
+        <div class="question">12. Welche Effekte können auftreten, wenn Schallwellen schräg auf eine Grenzfläche treffen?</div>
+        <div class="options">
+            <label class="option">
+                <input type="radio" name="q12" value="A">
+                <span class="option-label">A) Nur Reflexion</span>
+            </label>
+            <label class="option">
+                <input type="radio" name="q12" value="B">
+                <span class="option-label">B) Reflexion, Brechung und Wellenumwandlung</span>
+            </label>
+            <label class="option">
+                <input type="radio" name="q12" value="C">
+                <span class="option-label">C) Nur Durchlässigkeit</span>
+            </label>
+            <label class="option">
+                <input type="radio" name="q12" value="D">
+                <span class="option-label">D) Ausschließlich Streuung</span>
+            </label>
+        </div>
+        <div id="result12" class="result"></div>
+        <div id="explanation12" class="explanation">
+            <strong>Begründung:</strong> Bei schrägem Auftreffen können neben Reflexion und Brechung (gemäß Snellius-Gesetz) auch Wellenumwandlungen (z.B. Longitudinal- zu Transversalwellen) auftreten.
+        </div>
+    </div>
+
+    <!-- Frage 13 -->
+    <div class="quiz-container">
+        <div class="question">13. Wie wird der Einschallwinkel bei Senkrechtprüfungen angegeben?</div>
+        <div class="options">
+            <label class="option">
+                <input type="radio" name="q13" value="A">
+                <span class="option-label">A) α = 45°</span>
+            </label>
+            <label class="option">
+                <input type="radio" name="q13" value="B">
+                <span class="option-label">B) α = 90°</span>
+            </label>
+            <label class="option">
+                <input type="radio" name="q13" value="C">
+                <span class="option-label">C) α = 0°</span>
+            </label>
+            <label class="option">
+                <input type="radio" name="q13" value="D">
+                <span class="option-label">D) α = 180°</span>
+            </label>
+        </div>
+        <div id="result13" class="result"></div>
+        <div id="explanation13" class="explanation">
+            <strong>Begründung:</strong> Bei Senkrechtprüfungen beträgt der Einschallwinkel 0°, da der Schallstrahl senkrecht (parallel zur Flächennormalen) in das Material eintritt.
+        </div>
+    </div>
+
+    <!-- Frage 14 -->
+    <div class="quiz-container">
+        <div class="question">14. Welche Wellenarten werden in den Abbildungen durch gestrichelte Pfeile dargestellt?</div>
+        <div class="options">
+            <label class="option">
+                <input type="radio" name="q14" value="A">
+                <span class="option-label">A) Longitudinalwellen</span>
+            </label>
+            <label class="option">
+                <input type="radio" name="q14" value="B">
+                <span class="option-label">B) Transversalwellen</span>
+            </label>
+            <label class="option">
+                <input type="radio" name="q14" value="C">
+                <span class="option-label">C) Oberflächenwellen</span>
+            </label>
+            <label class="option">
+                <input type="radio" name="q14" value="D">
+                <span class="option-label">D) Druckwellen</span>
+            </label>
+        </div>
+        <div id="result14" class="result"></div>
+        <div id="explanation14" class="explanation">
+            <strong>Begründung:</strong> In technischen Zeichnungen werden Transversalwellen (Scherwellen) typischerweise durch gestrichelte Pfeile dargestellt, während Longitudinalwellen durch durchgehende Pfeile gekennzeichnet sind.
+        </div>
+    </div>
+
+    <!-- Frage 15 -->
+    <div class="quiz-container">
+        <div class="question">15. Welche Wellenart wird typischerweise bei Senkrechteinschaltung verwendet?</div>
+        <div class="options">
+            <label class="option">
+                <input type="radio" name="q15" value="A">
+                <span class="option-label">A) Transversalwellen</span>
+            </label>
+            <label class="option">
+                <input type="radio" name="q15" value="B">
+                <span class="option-label">B) Longitudinalwellen</span>
+            </label>
+            <label class="option">
+                <input type="radio" name="q15" value="C">
+                <span class="option-label">C) Oberflächenwellen</span>
+            </label>
+            <label class="option">
+                <input type="radio" name="q15" value="D">
+                <span class="option-label">D) Rayleighwellen</span>
+            </label>
+        </div>
+        <div id="result15" class="result"></div>
+        <div id="explanation15" class="explanation">
+            <strong>Begründung:</strong> Bei Senkrechteinschaltung werden überwiegend Longitudinalwellen genutzt, da diese sich geradlinig in Schallausbreitungsrichtung bewegen und einfach anzuregen sind.
+        </div>
+    </div>
+
+    <!-- Frage 16 -->
+    <div class="quiz-container">
+        <div class="question">16. Was charakterisiert die Schrägeinschaltung?</div>
+        <div class="options">
+            <label class="option">
+                <input type="radio" name="q16" value="A">
+                <span class="option-label">A) Ultraschallwellen breiten sich parallel zur Oberfläche aus</span>
+            </label>
+            <label class="option">
+                <input type="radio" name="q16" value="B">
+                <span class="option-label">B) Ultraschallwellen breiten sich unter einem Winkel >0° zur Flächennormalen aus</span>
+            </label>
+            <label class="option">
+                <input type="radio" name="q16" value="C">
+                <span class="option-label">C) Es werden ausschließlich Transversalwellen genutzt</span>
+            </label>
+            <label class="option">
+                <input type="radio" name="q16" value="D">
+                <span class="option-label">D) Der Prüfkopf muss in Flüssigkeit getaucht sein</span>
+            </label>
+        </div>
+        <div id="result16" class="result"></div>
+        <div id="explanation16" class="explanation">
+            <strong>Begründung:</strong> Schrägeinschaltung bedeutet, dass der Schall unter einem definierten Winkel (≠ 0°) zur Flächennormalen eingeleitet wird, was typischerweise zur Erzeugung von Transversalwellen genutzt wird.
+        </div>
+    </div>
+
+    <!-- Frage 17 -->
+    <div class="quiz-container">
+        <div class="question">17. Was ist ein Hauptmerkmal der Tauchtechnik?</div>
+        <div class="options">
+            <label class="option">
+                <input type="radio" name="q17" value="A">
+                <span class="option-label">A) Direkter Kontakt zwischen Prüfkopf und Prüfgegenstand</span>
+            </label>
+            <label class="option">
+                <input type="radio" name="q17" value="B">
+                <span class="option-label">B) Verwendung einer Flüssigkeit als Koppelmedium</span>
+            </label>
+            <label class="option">
+                <input type="radio" name="q17" value="C">
+                <span class="option-label">C) Ausschließliche Nutzung für Durchschallungstechnik</span>
+            </label>
+            <label class="option">
+                <input type="radio" name="q17" value="D">
+                <span class="option-label">D) Keine Möglichkeit zur Impuls-Echo-Technik</span>
+            </label>
+        </div>
+        <div id="result17" class="result"></div>
+        <div id="explanation17" class="explanation">
+            <strong>Begründung:</strong> Bei der Tauchtechnik befindet sich der Prüfkopf und/oder das Prüfobjekt in einer Flüssigkeit (meist Wasser), die als gleichmäßiges Koppelmedium dient und reproduzierbare Ergebnisse ermöglicht.
+        </div>
+    </div>
+
+    <!-- Frage 18 -->
+    <div class="quiz-container">
+        <div class="question">18. Was wird in einem A-Bild dargestellt?</div>
+        <div class="options">
+            <label class="option">
+                <input type="radio" name="q18" value="A">
+                <span class="option-label">A) Farbcodierte Temperaturverteilung</span>
+            </label>
+            <label class="option">
+                <input type="radio" name="q18" value="B">
+                <span class="option-label">B) Echohöhe über dem Schallweg</span>
+            </label>
+            <label class="option">
+                <input type="radio" name="q18" value="C">
+                <span class="option-label">C) Frequenzspektrum des Ultraschalls</span>
+            </label>
+            <label class="option">
+                <input type="radio" name="q18" value="D">
+                <span class="option-label">D) Dreidimensionale Fehlerabbildung</span>
+            </label>
+        </div>
+        <div id="result18" class="result"></div>
+        <div id="explanation18" class="explanation">
+            <strong>Begründung:</strong> Das A-Bild (Amplituden-Bild) zeigt die Echohöhe (Amplitude) in Abhängigkeit vom Schallweg (Laufzeit), was Rückschlüsse auf Fehlergröße und -tiefe ermöglicht.
+        </div>
+    </div>
+
+    <!-- Frage 19 -->
+    <div class="quiz-container">
+        <div class="question">19. Wann werden mehrere Fehler im Schallbündel als getrennte Anzeigen abgebildet?</div>
+        <div class="options">
+            <label class="option">
+                <input type="radio" name="q19" value="A">
+                <span class="option-label">A) Wenn ihr Abstand größer ist als die Breite ihrer Anzeigen</span>
+            </label>
+            <label class="option">
+                <input type="radio" name="q19" value="B">
+                <span class="option-label">B) Wenn sie dieselbe Echohöhe haben</span>
+            </label>
+            <label class="option">
+                <input type="radio" name="q19" value="C">
+                <span class="option-label">C) Nur bei Verwendung der Tauchtechnik</span>
+            </label>
+            <label class="option">
+                <input type="radio" name="q19" value="D">
+                <span class="option-label">D) Ausschließlich bei Longitudinalwellen</span>
+            </label>
+        </div>
+        <div id="result19" class="result"></div>
+        <div id="explanation19" class="explanation">
+            <strong>Begründung:</strong> Fehler werden nur dann als separate Anzeigen abgebildet, wenn ihr Abstand größer ist als die laterale Auflösung des Schallbündels (typischerweise dessen -6dB-Breite).
+        </div>
+    </div>
+
+    <!-- Frage 20 -->
+    <div class="quiz-container">
+        <div class="question">20. Wann liegt ein indirekter Fehlernachweis vor?</div>
+        <div class="options">
+            <label class="option">
+                <input type="radio" name="q20" value="A">
+                <span class="option-label">A) Wenn Fehler durch Rückwandeches sichtbar sind</span>
+            </label>
+            <label class="option">
+                <input type="radio" name="q20" value="B">
+                <span class="option-label">B) Wenn Schallstrahlen nicht zum Prüfkopf reflektiert werden</span>
+            </label>
+            <label class="option">
+                <input type="radio" name="q20" value="C">
+                <span class="option-label">C) Wenn die Echohöhe genau gemessen wird</span>
+            </label>
+            <label class="option">
+                <input type="radio" name="q20" value="D">
+                <span class="option-label">D) Wenn zwei Prüfköpfe verwendet werden</span>
+            </label>
+        </div>
+        <div id="result20" class="result"></div>
+        <div id="explanation20" class="explanation">
+            <strong>Begründung:</strong> Indirekter Nachweis bedeutet, dass der Fehler nicht durch sein eigenes Echo erkannt wird, sondern durch das Fehlen von erwarteten Signalen (z.B. Rückwandecho) oder durch Abschattungseffekte.
+        </div>
+    </div>
+
+    <button class="submit-btn" onclick="checkAnswers()">Antworten überprüfen</button>
+
+    <script>
+        const correctAnswers = {
+            q1: "B", q2: "B", q3: "B", q4: "B", q5: "A",
+            q6: "C", q7: "B", q8: "B", q9: "C", q10: "B",
+            q11: "B", q12: "B", q13: "C", q14: "B",
+            q15: "B", q16: "B", q17: "B", q18: "B",
+            q19: "A", q20: "B"
+        };
+
+        function checkAnswers() {
+            let score = 0;
+            const totalQuestions = Object.keys(correctAnswers).length;
+
+            for (let i = 1; i <= totalQuestions; i++) {
+                const questionName = "q" + i;
+                const selectedOption = document.querySelector(`input[name="${questionName}"]:checked`);
+                const resultDiv = document.getElementById("result" + i);
+                const explanationDiv = document.getElementById("explanation" + i);
+
+                if (selectedOption) {
+                    if (selectedOption.value === correctAnswers[questionName]) {
+                        resultDiv.innerHTML = "✓ Richtig!";
+                        resultDiv.className = "result correct";
+                        score++;
+                    } else {
+                        resultDiv.innerHTML = `✗ Falsch! Richtige Antwort: <strong>${correctAnswers[questionName]}</strong>`;
+                        resultDiv.className = "result incorrect";
+                    }
+                    explanationDiv.style.display = "block";
                 } else {
-                    showResults();
+                    resultDiv.innerHTML = "⚠ Bitte eine Antwort auswählen!";
+                    resultDiv.className = "result incorrect";
                 }
-            };
-            
-            function showResults() {
-                const correct = answers.reduce((count, answer, i) => 
-                    count + (answer === questions[i].correct_answer ? 1 : 0), 0);
-                
-                document.getElementById('question-area').innerHTML = `
-                    <div class="question-container">
-                        <h2>Ergebnis: ${correct}/${questions.length}</h2>
-                        <p>${(correct/questions.length*100).toFixed(1)}% richtig</p>
-                        <button onclick="location.reload()">Neues Quiz</button>
-                    </div>
-                `;
-                
-                document.getElementById('prev-btn').style.display = 'none';
-                document.getElementById('next-btn').style.display = 'none';
+                resultDiv.style.display = "block";
             }
-            
-            // Quiz Container anzeigen
-            document.getElementById('quiz-container').style.display = 'block';
-            document.getElementById('start-quiz').style.display = 'none';
+
+            const percentage = Math.round((score / totalQuestions) * 100);
+            let feedback = "";
+            if (percentage >= 90) feedback = "Hervorragend! Sie sind ein Ultraschall-Experte!";
+            else if (percentage >= 70) feedback = "Gut gemacht! Sie haben solide Kenntnisse.";
+            else if (percentage >= 50) feedback = "Basiswissen vorhanden - weiter üben!";
+            else feedback = "Noch Übungsbedarf - schauen Sie sich die Themen nochmal an!";
+
+            alert(`Ergebnis: ${score}/${totalQuestions} (${percentage}%)\n\n${feedback}`);
         }
     </script>
 </body>
